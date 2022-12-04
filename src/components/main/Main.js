@@ -17,6 +17,8 @@ export default function Main() {
          <h1 className="subject-titles">Linux</h1>
         </li>
       </ul>
+
+      <button className='new-quiz'>Start new quiz</button>
     </div>
   )
 }

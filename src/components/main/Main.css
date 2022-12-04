@@ -95,3 +95,38 @@
     opacity: 100%;
     -webkit-text-stroke: 0.5px white;
 }
+
+.subject-items:hover{
+    animation: subjectsOnHover;
+    animation-duration: 2s;
+    background-size: 220%;
+    opacity: 100%;
+}
+
+@keyframes subjectsOnHover {
+    from{
+        background-size: cover;
+        opacity: 90%;
+    }
+    from{
+        background-size: 220%;
+        opacity: 100%;
+    }
+}
+
+.new-quiz{
+    background-color: #4CAF50;
+    border-radius: 30px;
+    padding: 10px;
+    animation: TitleFloating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    box-shadow: #4CAF50 5px 5px 25px,
+    #4CAF50 -5px -5px 25px;
+    margin-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
