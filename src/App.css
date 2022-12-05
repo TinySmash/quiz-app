@@ -92,11 +92,21 @@ li
   display: none;
 }
 
+@keyframes menuTitles {
+  from{
+    opacity: 0;
+  }to{
+    opacity: 100%;
+  }
+}
+
 .menu-titles.show
 {
   display: flex;
   font-size: 15px;
   margin-left: 20px;
+  animation: menuTitles;
+  animation-duration: 1s;
 }
 
 .menu-item

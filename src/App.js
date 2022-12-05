@@ -1,11 +1,11 @@
-import React from 'react'
+import React  from 'react'
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Main from './components/main/Main';
+import Quiz from './components/quiz/Quiz';
 
 function App() {
   
-  let menuOpened = false;
   
   const openMenu = (e) => {
     e.preventDefault();
@@ -15,7 +15,11 @@ function App() {
     for(let i = 0; i < menuTitles.length; i++){
       menuTitles?.[i]?.classList?.toggle('show');
     }
-    }
+  }
+
+
+
+
   return (
     <>
       <Router>
@@ -28,21 +32,21 @@ function App() {
               <h1 className="menu-titles">Menu</h1>
             </li>
             <li>
-              <button className="menu-item" id='second-item'>
+              <Link className="menu-item" id='second-item' to='/startQuiz'>
                 <img src="question-mark-circle.png" alt="" className='icons' />
-              </button>
+              </Link>
               <h1 className="menu-titles">Start quiz</h1>
             </li>
             <li>
-            <button className="menu-item" id='third-item'>
+            <Link className="menu-item" id='third-item'>
               <img src="plus.png" alt="" className='icons' />
-            </button>
+            </Link>
             <h1 className="menu-titles">Add costum questions</h1>
             </li>
             <li>
-            <button className="menu-item" id='fourth-item'>
+            <Link className="menu-item" id='fourth-item'>
               <img src="star.png" alt="" className='icons' />
-            </button>
+            </Link>
             <h1 className="menu-titles">Rate us</h1>
             </li>
           </ul>
@@ -50,6 +54,7 @@ function App() {
 
         <Routes>
           <Route exact path='/' element={<Main/>}></Route>
+          <Route exact path='/startQuiz' element={<Quiz/>}></Route>
         </Routes>
 
       </Router>
