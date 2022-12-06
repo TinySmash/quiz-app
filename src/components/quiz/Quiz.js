@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import './Quiz.css';
+import './Quiz.css'
 
 export default class Quiz extends Component {
+
+    componentDidMount(){
+        const getQuestions = new Promise(async (res,err) => {
+           await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`)
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.warn(err))
+        })
+    }
   render() {
+
+
     return (
       <div className='quiz-pannel'>
-        <h1 className="start-quiz-title">Are you ready ?</h1>
-
-        <form action="" className="actions">
-            <Link className="start-actions" to="/">back</Link>
-            <Link className="start-actions" to="/quiz">Start</Link>
-        </form>
-
+        <h2 className="question-number">Question  number : </h2>
       </div>
     )
   }

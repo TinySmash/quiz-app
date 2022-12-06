@@ -2,6 +2,7 @@ import React  from 'react'
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Main from './components/main/Main';
+import StartQuiz from './components/startQuiz/StartQuiz';
 import Quiz from './components/quiz/Quiz';
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
               <h1 className="menu-titles">Menu</h1>
             </li>
             <li>
-              <Link className="menu-item" id='second-item' to='/startQuiz'>
+              <Link className="menu-item" id='second-item' to='/start-quiz'>
                 <img src="question-mark-circle.png" alt="" className='icons' />
               </Link>
               <h1 className="menu-titles">Start quiz</h1>
@@ -54,7 +55,8 @@ function App() {
 
         <Routes>
           <Route exact path='/' element={<Main/>}></Route>
-          <Route exact path='/startQuiz' element={<Quiz/>}></Route>
+          <Route exact path='/start-quiz' element={<StartQuiz/>}></Route>
+          <Route exact path='/quiz' element={<Quiz/>}></Route>
         </Routes>
 
       </Router>
